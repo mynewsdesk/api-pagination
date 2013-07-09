@@ -19,7 +19,7 @@ end
 class NumbersController < ActionController::Base
   include Rails.application.routes.url_helpers
 
-  after_filter only: [:index] { paginate(:numbers) }
+  after_filter only: [:index] { header_pagination_for(:numbers) }
 
   def index
     page = params.fetch(:page, 1).to_i

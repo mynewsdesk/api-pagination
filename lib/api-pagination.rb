@@ -2,7 +2,7 @@ require 'api-pagination/version'
 
 module ApiPagination
   protected
-    def paginate(scope)
+    def header_pagination_for(scope)
       scope = instance_variable_get(:"@#{scope}")
       url   = request.original_url.sub(/\?.*$/, '')
       pages = {}
